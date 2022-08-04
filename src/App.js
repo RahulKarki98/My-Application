@@ -1,6 +1,7 @@
 import "./App.css";
 import { AddColor } from "./AddColor"; // named
 import { Counter } from "./Counter"  // default
+import { useState } from "react";
 
 export default function App() {
   
@@ -114,6 +115,15 @@ function Movie({ movie }){
 const styles ={
   color: movie.rating >= 8 ? "green" : "red"
 }
+ 
+const [show, setShow]= useState(true);
+
+//True -block
+//False- none
+//!show- false , !true= false
+const summaryStyles ={
+  display: show ? "block" : "none",
+}
 
   return(
     <div className="movie-container">
@@ -122,8 +132,8 @@ const styles ={
       <h2 className="movie-name">{movie.name}</h2> 
       <p style ={styles} className="movie-rating">⭐{movie.rating}</p>
       </div>
-      <button>Toggle description</button>
-      <p className="movie-summary">{movie.summary}</p>
+      <button onClick={() => setShow(!show)}>Toggle description</button>
+      <p style ={summaryStyles} className="movie-summary">{movie.summary}</p>
       <Counter />
     </div>
   )
