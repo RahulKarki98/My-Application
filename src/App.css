@@ -15,7 +15,7 @@
 }
 .like-style,
 .dislike-style{
-  font-size: 25px;
+  font-size: 20px;
 
 }
 
@@ -61,4 +61,15 @@ width: 340px;
   flex-wrap: wrap;
   justify-content: space-around;
   gap: 20px;
+}
+
+.add-movie-form{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.movie-detail-container{
+  max-width: 800px;
 }
